@@ -49,7 +49,8 @@
 
 #define ngx_http_vhost_traffic_status_add_rc(s, n) {                           \
     if(s < 200) {n->stat_1xx_counter++;}                                       \
-    else if(s < 300) { n->stat_2xx_counter++; if ( s == 204) {n->stat_204_counter++;}}                                  \
+    else if (s == 204) {n->stat_204_counter++;}                               \
+    else if(s < 300) { n->stat_2xx_counter++;}                                 \
     else if(s < 400) {n->stat_3xx_counter++;}                                  \
     else if(s < 500) {n->stat_4xx_counter++;}                                  \
     else {n->stat_5xx_counter++;}                                              \
