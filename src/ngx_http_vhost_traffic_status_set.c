@@ -121,6 +121,10 @@ ngx_http_vhost_traffic_status_set_by_filter_node_member(
     {
         return vtsn->stat_2xx_counter;
     }
+    else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "204") == 0)
+    {
+        return vtsn->stat_204_counter;
+    }
     else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "3xx") == 0)
     {
         return vtsn->stat_3xx_counter;
