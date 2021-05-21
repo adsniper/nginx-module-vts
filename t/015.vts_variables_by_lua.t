@@ -21,6 +21,7 @@ __DATA__
                                 ngx.var.vts_out_bytes,
                                 ngx.var.vts_1xx_counter,
                                 ngx.var.vts_2xx_counter,
+                                ngx.var.vts_204_counter,
                                 ngx.var.vts_3xx_counter,
                                 ngx.var.vts_4xx_counter,
                                 ngx.var.vts_5xx_counter,
