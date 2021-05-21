@@ -80,7 +80,6 @@ ngx_http_vhost_traffic_status_display_set_server_node(
                       vtsn->stat_out_bytes,
                       vtsn->stat_1xx_counter,
                       vtsn->stat_2xx_counter,
-                      vtsn->stat_204_counter,
                       vtsn->stat_3xx_counter,
                       vtsn->stat_4xx_counter,
                       vtsn->stat_5xx_counter,
@@ -110,7 +109,6 @@ ngx_http_vhost_traffic_status_display_set_server_node(
                       vtsn->stat_out_bytes_oc,
                       vtsn->stat_1xx_counter_oc,
                       vtsn->stat_2xx_counter_oc,
-                      vtsn->stat_204_counter_oc,
                       vtsn->stat_3xx_counter_oc,
                       vtsn->stat_4xx_counter_oc,
                       vtsn->stat_5xx_counter_oc,
@@ -130,7 +128,6 @@ ngx_http_vhost_traffic_status_display_set_server_node(
                       vtsn->stat_out_bytes,
                       vtsn->stat_1xx_counter,
                       vtsn->stat_2xx_counter,
-                      vtsn->stat_204_counter,
                       vtsn->stat_3xx_counter,
                       vtsn->stat_4xx_counter,
                       vtsn->stat_5xx_counter,
@@ -152,7 +149,6 @@ ngx_http_vhost_traffic_status_display_set_server_node(
                       vtsn->stat_out_bytes_oc,
                       vtsn->stat_1xx_counter_oc,
                       vtsn->stat_2xx_counter_oc,
-                      vtsn->stat_204_counter_oc,
                       vtsn->stat_3xx_counter_oc,
                       vtsn->stat_4xx_counter_oc,
                       vtsn->stat_5xx_counter_oc,
@@ -193,7 +189,6 @@ ngx_http_vhost_traffic_status_display_set_server(ngx_http_request_t *r,
             vtscf->stats.stat_out_bytes += vtsn->stat_out_bytes;
             vtscf->stats.stat_1xx_counter += vtsn->stat_1xx_counter;
             vtscf->stats.stat_2xx_counter += vtsn->stat_2xx_counter;
-            vtscf->stats.stat_204_counter += vtsn->stat_204_counter;
             vtscf->stats.stat_3xx_counter += vtsn->stat_3xx_counter;
             vtscf->stats.stat_4xx_counter += vtsn->stat_4xx_counter;
             vtscf->stats.stat_5xx_counter += vtsn->stat_5xx_counter;
@@ -207,7 +202,6 @@ ngx_http_vhost_traffic_status_display_set_server(ngx_http_request_t *r,
             vtscf->stats.stat_out_bytes_oc += vtsn->stat_out_bytes_oc;
             vtscf->stats.stat_1xx_counter_oc += vtsn->stat_1xx_counter_oc;
             vtscf->stats.stat_2xx_counter_oc += vtsn->stat_2xx_counter_oc;
-            vtscf->stats.stat_204_counter_oc += vtsn->stat_204_counter_oc;
             vtscf->stats.stat_3xx_counter_oc += vtsn->stat_3xx_counter_oc;
             vtscf->stats.stat_4xx_counter_oc += vtsn->stat_4xx_counter_oc;
             vtscf->stats.stat_5xx_counter_oc += vtsn->stat_5xx_counter_oc;
@@ -383,7 +377,7 @@ ngx_http_vhost_traffic_status_display_set_upstream_node(ngx_http_request_t *r,
         buf = ngx_sprintf(buf, NGX_HTTP_VHOST_TRAFFIC_STATUS_JSON_FMT_UPSTREAM,
                 &key, vtsn->stat_request_counter,
                 vtsn->stat_in_bytes, vtsn->stat_out_bytes,
-                vtsn->stat_1xx_counter, vtsn->stat_2xx_counter,  vtsn->stat_204_counter,
+                vtsn->stat_1xx_counter, vtsn->stat_2xx_counter,
                 vtsn->stat_3xx_counter, vtsn->stat_4xx_counter,
                 vtsn->stat_5xx_counter,
                 vtsn->stat_request_time_counter,
@@ -417,7 +411,7 @@ ngx_http_vhost_traffic_status_display_set_upstream_node(ngx_http_request_t *r,
                 ngx_http_vhost_traffic_status_max_integer,
                 vtsn->stat_request_counter_oc, vtsn->stat_in_bytes_oc,
                 vtsn->stat_out_bytes_oc, vtsn->stat_1xx_counter_oc,
-                vtsn->stat_2xx_counter_oc, vtsn->stat_204_counter_oc, vtsn->stat_3xx_counter_oc,
+                vtsn->stat_2xx_counter_oc, vtsn->stat_3xx_counter_oc,
                 vtsn->stat_4xx_counter_oc, vtsn->stat_5xx_counter_oc,
                 vtsn->stat_request_time_counter_oc, vtsn->stat_response_time_counter_oc);
 
@@ -443,7 +437,7 @@ ngx_http_vhost_traffic_status_display_set_upstream_node(ngx_http_request_t *r,
                 ngx_http_vhost_traffic_status_max_integer,
                 (ngx_atomic_uint_t) 0, (ngx_atomic_uint_t) 0,
                 (ngx_atomic_uint_t) 0, (ngx_atomic_uint_t) 0,
-                (ngx_atomic_uint_t) 0, (ngx_atomic_uint_t) 0, (ngx_atomic_uint_t) 0,
+                (ngx_atomic_uint_t) 0, (ngx_atomic_uint_t) 0,
                 (ngx_atomic_uint_t) 0, (ngx_atomic_uint_t) 0,
                 (ngx_atomic_uint_t) 0, (ngx_atomic_uint_t) 0);
     }
@@ -749,7 +743,6 @@ u_char
                       vtsn->stat_out_bytes_oc,
                       vtsn->stat_1xx_counter_oc,
                       vtsn->stat_2xx_counter_oc,
-                      vtsn->stat_204_counter_oc,
                       vtsn->stat_3xx_counter_oc,
                       vtsn->stat_4xx_counter_oc,
                       vtsn->stat_5xx_counter_oc,
