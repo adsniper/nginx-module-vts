@@ -55,6 +55,7 @@ typedef struct {
     ngx_atomic_t                                           stat_out_bytes;
     ngx_atomic_t                                           stat_1xx_counter;
     ngx_atomic_t                                           stat_2xx_counter;
+    ngx_atomic_t                                           stat_204_counter;
     ngx_atomic_t                                           stat_3xx_counter;
     ngx_atomic_t                                           stat_4xx_counter;
     ngx_atomic_t                                           stat_5xx_counter;
@@ -70,6 +71,7 @@ typedef struct {
     ngx_atomic_t                                           stat_out_bytes_oc;
     ngx_atomic_t                                           stat_1xx_counter_oc;
     ngx_atomic_t                                           stat_2xx_counter_oc;
+    ngx_atomic_t                                           stat_204_counter_oc;
     ngx_atomic_t                                           stat_3xx_counter_oc;
     ngx_atomic_t                                           stat_4xx_counter_oc;
     ngx_atomic_t                                           stat_5xx_counter_oc;
