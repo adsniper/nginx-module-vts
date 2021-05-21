@@ -67,6 +67,7 @@ ngx_http_vhost_traffic_status_display_prometheus_set_server_node(
                       &server, vtsn->stat_out_bytes,
                       &server, vtsn->stat_1xx_counter,
                       &server, vtsn->stat_2xx_counter,
+                      &server, vtsn->stat_204_counter,
                       &server, vtsn->stat_3xx_counter,
                       &server, vtsn->stat_4xx_counter,
                       &server, vtsn->stat_5xx_counter,
@@ -149,6 +150,7 @@ ngx_http_vhost_traffic_status_display_prometheus_set_server(ngx_http_request_t *
             vtscf->stats.stat_out_bytes += vtsn->stat_out_bytes;
             vtscf->stats.stat_1xx_counter += vtsn->stat_1xx_counter;
             vtscf->stats.stat_2xx_counter += vtsn->stat_2xx_counter;
+            vtscf->stats.stat_204_counter += vtsn->stat_204_counter;
             vtscf->stats.stat_3xx_counter += vtsn->stat_3xx_counter;
             vtscf->stats.stat_4xx_counter += vtsn->stat_4xx_counter;
             vtscf->stats.stat_5xx_counter += vtsn->stat_5xx_counter;
@@ -208,6 +210,7 @@ ngx_http_vhost_traffic_status_display_prometheus_set_filter_node(
                       &filter, &filter_name, vtsn->stat_out_bytes,
                       &filter, &filter_name, vtsn->stat_1xx_counter,
                       &filter, &filter_name, vtsn->stat_2xx_counter,
+                      &filter, &filter_name, vtsn->stat_204_counter,
                       &filter, &filter_name, vtsn->stat_3xx_counter,
                       &filter, &filter_name, vtsn->stat_4xx_counter,
                       &filter, &filter_name, vtsn->stat_5xx_counter,
@@ -322,6 +325,7 @@ ngx_http_vhost_traffic_status_display_prometheus_set_upstream_node(
                       &upstream, &upstream_server, vtsn->stat_out_bytes,
                       &upstream, &upstream_server, vtsn->stat_1xx_counter,
                       &upstream, &upstream_server, vtsn->stat_2xx_counter,
+                      &upstream, &upstream_server, vtsn->stat_204_counter,
                       &upstream, &upstream_server, vtsn->stat_3xx_counter,
                       &upstream, &upstream_server, vtsn->stat_4xx_counter,
                       &upstream, &upstream_server, vtsn->stat_5xx_counter,
